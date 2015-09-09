@@ -10,3 +10,8 @@ class DjangoRouter(object):
         if model._meta.app_label in self.django_apps:
             return 'django'
         return None
+
+    def allow_migrate(self, db, app_label, model=None, **hints):
+        if db == 'django':
+            return app_label in self.django_apps
+        return False

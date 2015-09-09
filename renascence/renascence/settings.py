@@ -84,8 +84,14 @@ DATABASES = {
         'PASSWORD': 'bazinga!',
         'HOST': '127.0.0.1',
         'PORT': '3306',
+    },
+    'django': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
     }
 }
+
+DATABASE_ROUTERS = ['renascence.routers.DjangoRouter']
 
 
 # Internationalization
